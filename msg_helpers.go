@@ -750,8 +750,8 @@ func packDataAplPrefix(p *APLPrefix, msg []byte, off int) (int, error) {
 	}
 	addr = addr[:i+1]
 
-	adflen := uint8(len(addr)) & 0x7f
-	off, err = packUint8(n|adflen, msg, off)
+	afdlen := uint8(len(addr)) & 0x7f
+	off, err = packUint8(n|afdlen, msg, off)
 	if err != nil {
 		return len(msg), err
 	}
