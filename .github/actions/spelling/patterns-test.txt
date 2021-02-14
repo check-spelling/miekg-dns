@@ -1,0 +1,15 @@
+NewRR\(.*\)
+testRR\(.*\)
+^.*(?:\s|\\t)+(?:APL|LOC|TXT|MX|DNSKEY|PX|SOA|SO|IN|CH|SSHFP)(?:\s|\\t)+.*$
+^\s*(?:Mbox|Signature|Algorithm|Prime[12]|Modulus|Coefficient|PrivateExponent|Exponent[12]|PublicExponent|PrivateKey|NextDomain):.*$
+"[0-9a-f]{4,}"
+"[0-9A-F]{4,}"
+^\s*[0-9a-f]{4,}$
+(?:Signature|PublicKey) !?= ".*"
+TsigGenerate\(m, ".*"
+tkeyStr.*
+^[a-zA-Z=;,/0-9+-]{64}$
+^[a-zA-Z=;,/0-9+-]{72}$
+^\s*[a-zA-Z=;,/0-9+-]{59}$
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b

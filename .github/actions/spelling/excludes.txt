@@ -1,0 +1,7 @@
+ignore$
+(?:^|/)(?i)COPYRIGHT
+(?:^|/)(?i)LICEN[CS]E
+^\.github/
+\.mod$
+\.sum$
+_test\.go$
