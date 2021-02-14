@@ -100,11 +100,11 @@ func TestNextLabel(t *testing.T) {
 }
 
 func TestPrevLabel(t *testing.T) {
-	type prev struct {
+	type previous struct {
 		string
 		int
 	}
-	prever := map[prev]int{
+	prever := map[previous]int{
 		{"", 1}:             0,
 		{"www.miek.nl.", 0}: 12,
 		{"www.miek.nl.", 1}: 9,
