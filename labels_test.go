@@ -104,7 +104,7 @@ func TestPrevLabel(t *testing.T) {
 		string
 		int
 	}
-	prever := map[previous]int{
+	previousLabels := map[previous]int{
 		{"", 1}:             0,
 		{"www.miek.nl.", 0}: 12,
 		{"www.miek.nl.", 1}: 9,
@@ -120,7 +120,7 @@ func TestPrevLabel(t *testing.T) {
 		{"www.miek.nl.", 3}: 0,
 		{"www.miek.nl", 3}:  0,
 	}
-	for s, i := range prever {
+	for s, i := range previousLabels {
 		x, ok := PrevLabel(s.string, s.int)
 		if i != x {
 			t.Errorf("label should be %d, got %d, %t: previous %d, %s", i, x, ok, s.int, s.string)
