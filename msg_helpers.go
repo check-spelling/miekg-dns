@@ -648,12 +648,12 @@ func packDataSVCB(pairs []SVCBKeyValue, msg []byte, off int) (int, error) {
 	sort.Slice(pairs, func(i, j int) bool {
 		return pairs[i].Key() < pairs[j].Key()
 	})
-	prev := svcb_RESERVED
+	previous := svcb_RESERVED
 	for _, el := range pairs {
-		if el.Key() == prev {
+		if el.Key() == previous {
 			return len(msg), &Error{err: "repeated SVCB keys are not allowed"}
 		}
-		prev = el.Key()
+		previous = el.Key()
 		packed, err := el.pack()
 		if err != nil {
 			return len(msg), err
