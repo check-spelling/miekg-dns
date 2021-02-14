@@ -85,13 +85,13 @@ func TestNextLabel(t *testing.T) {
 		string
 		int
 	}
-	nexts := map[next]int{
+	nextLabels := map[next]int{
 		{"", 1}:             0,
 		{"www.miek.nl.", 0}: 4,
 		{"www.miek.nl.", 4}: 9,
 		{"www.miek.nl.", 9}: 12,
 	}
-	for s, i := range nexts {
+	for s, i := range nextLabels {
 		x, ok := NextLabel(s.string, s.int)
 		if i != x {
 			t.Errorf("label should be %d, got %d, %t: next %d, %s", i, x, ok, s.int, s.string)
